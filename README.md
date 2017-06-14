@@ -7,7 +7,7 @@ Package [paypal](https://godoc.org/github.com/arthurwhite/paypal) provides a Pay
 1. Get package:
 
    ```Shell
-   go get -u github.com/arthurwhite/paypal
+   go get -u github.com/arthurwhite/paypal/...
    ````
 
 2. Import it in your code:
