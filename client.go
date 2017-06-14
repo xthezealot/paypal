@@ -1,3 +1,4 @@
+// Package paypal provides a PayPal SDK.
 package paypal
 
 // Client keeps the data to make a correct request to PayPal.

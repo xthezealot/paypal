@@ -1,3 +1,8 @@
+/*
+Package pdt implements PayPal Payment Data Transfer.
+
+See https://developer.paypal.com/docs/classic/products/payment-data-transfer.
+*/
 package pdt
 
 import (
