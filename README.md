@@ -1,4 +1,4 @@
-# paypal [![GoDoc](https://godoc.org/github.com/arthurwhite/paypal?status.svg)](https://godoc.org/github.com/arthurwhite/paypal) [![Build](https://travis-ci.org/arthurwhite/paypal.svg?branch=master)](https://travis-ci.org/arthurwhite/paypal) [![Coverage](https://coveralls.io/repos/github/arthurwhite/paypal/badge.svg?branch=master)](https://coveralls.io/github/arthurwhite/paypal?branch=master) [![Go Report](https://goreportcard.com/badge/github.com/arthurwhite/paypal)](https://goreportcard.com/report/github.com/arthurwhite/paypal)
+# paypal [![GoDoc](https://godoc.org/github.com/arthurwhite/paypal?status.svg)](https://godoc.org/github.com/arthurwhite/paypal) [![Build](https://travis-ci.org/arthurwhite/paypal.svg?branch=master)](https://travis-ci.org/arthurwhite/paypal) [![Coverage](https://coveralls.io/repos/github/arthurwhite/paypal/badge.svg?branch=master)](https://coveralls.io/github/arthurwhite/paypal?branch=master) [![Go Report](https://goreportcard.com/badge/github.com/arthurwhite/paypal)](https://goreportcard.com/report/github.com/arthurwhite/paypal) ![Status Testing](https://img.shields.io/badge/status-testing-orange.svg)
 
 Package [paypal](https://godoc.org/github.com/arthurwhite/paypal) provides a PayPal SDK.
 
@@ -32,7 +32,7 @@ pp := &paypal.Client{
 Import package [pdt](https://godoc.org/github.com/arthurwhite/paypal/pdt) in your code:
 
 ```Go
-import "github.com/arthurwhite/paypal"
+import "github.com/arthurwhite/paypal/pdt"
 ```
 
 #### Get transaction

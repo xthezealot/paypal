@@ -9,7 +9,6 @@ import (
 	"bufio"
 	"errors"
 	"fmt"
-	"github.com/arthurwhite/paypal"
 	"io"
 	"net/http"
 	"net/mail"
@@ -18,6 +17,8 @@ import (
 	"strconv"
 	"strings"
 	"time"
+
+	"github.com/arthurwhite/paypal"
 )
 
 const (
@@ -66,10 +67,9 @@ type Transaction struct {
 
 func (tx *Transaction) String() (s string) {
 	txValue := reflect.ValueOf(tx).Elem()
-	txType := reflect.TypeOf(*tx)
 	s += fmt.Sprintf("%21v  %22v  %v\n", "FIELD", "PAYPAL VARIABLE", "VALUE")
 	for i := 0; i < txValue.NumField(); i++ {
-		field := txType.Field(i)
+		field := txValue.Type().Field(i)
 		if tagVal, ok := field.Tag.Lookup("paypal"); ok {
 			s += fmt.Sprintf("%21v  %22v  %v\n", field.Name, tagVal, txValue.Field(i))
 		}
@@ -99,7 +99,6 @@ func parseTransaction(r io.Reader) (*Transaction, error) {
 	}
 	tx := new(Transaction)
 	txValue := reflect.ValueOf(tx).Elem()
-	txType := reflect.TypeOf(*tx)
 	for bs.Scan() {
 		t := bs.Text()
 		i := strings.IndexByte(t, '=')
@@ -111,8 +110,8 @@ func parseTransaction(r io.Reader) (*Transaction, error) {
 		if err != nil {
 			return nil, err
 		}
-		for i := 0; i < txType.NumField(); i++ {
-			field := txType.Field(i)
+		for i := 0; i < txValue.NumField(); i++ {
+			field := txValue.Type().Field(i)
 			if tagVal, ok := field.Tag.Lookup("paypal"); !ok || tagVal != key {
 				continue
 			}
