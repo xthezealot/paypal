@@ -37,7 +37,7 @@ import "github.com/arthurwhite/paypal/pdt"
 
 #### Get transaction
 
-Use [GetTransaction](https://godoc.org/github.com/arthurwhite/paypal#paypal.GetTransaction) to retreive a transaction by its ID:
+Use [pdt.GetTransaction](https://godoc.org/github.com/arthurwhite/paypal/pdt#GetTransaction) to retreive a transaction by its ID:
 
 ```Go
 tx, _ := pdt.GetTransaction(pp, "EPC66XON1D4EE27M9")
